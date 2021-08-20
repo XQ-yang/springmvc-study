@@ -1,6 +1,5 @@
 package com.springmvc.controller;
 
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,11 +42,11 @@ public class HelloController {
     //    return "Hello Spring " + content;
     //}
 
-    @RequestMapping("/hello/{name}")
-    public String sayhello(@PathVariable("name") String name, Model model){
-        model.addAttribute("name", name);
-        return "hello";
-    }
+    //@RequestMapping("/hello/{name}")
+    //public String sayhello(@PathVariable("name") String name, Model model){
+    //    model.addAttribute("name", name);
+    //    return "hello";
+    //}
 
     @RequestMapping("/toLogin")
     public String toLogin(){
@@ -57,13 +56,14 @@ public class HelloController {
     @RequestMapping("/Login")
     public String Login(String name, HttpServletRequest request){
         HttpSession session = request.getSession();
-        session.setAttribute("name",name);
+        session.setAttribute("username",name);
         return "redirect:/main";
     }
 
     @RequestMapping("/Logout")
     public String Logout(HttpServletRequest request){
-        request.getSession().removeAttribute("name");
+        // 销毁session
+        request.getSession().invalidate();
         return "redirect:/index.jsp";
     }
 

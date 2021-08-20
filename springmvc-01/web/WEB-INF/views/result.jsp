@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>你成功了！！！！</h1>
-<span>${name},欢迎您！</span>
+<span>${username},欢迎您！</span>
 <a href="${pageContext.request.contextPath}/Logout">退出</a>
 </body>
 </html>
