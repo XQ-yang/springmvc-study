@@ -21,7 +21,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         if (request.getRequestURI().contains("Login"))
             return true;
         // 存入的session不为空放行
-        if (session.getAttribute("name") != null)
+        if (session.getAttribute("username") != null)
             return true;
 
         // 其他请求均转发到登录页，登录之后才能访问
