@@ -22,6 +22,7 @@
     </style>
   </head>
   <body>
-  <a href="${pageContext.request.contextPath}/click">不要点我！！！</a>
+  <a href="${pageContext.request.contextPath}/main">进入首页！！！</a>
+  <a href="${pageContext.request.contextPath}/toLogin">登录</a>
   </body>
 </html>
