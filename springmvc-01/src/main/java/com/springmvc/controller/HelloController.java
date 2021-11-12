@@ -49,8 +49,14 @@ public class HelloController {
     //}
 
     @RequestMapping("/toLogin")
-    public String toLogin(){
-        return "login";
+    public String toLogin(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        if (session.getAttribute("username") != null){
+            System.out.println(session.getAttribute("username")+"已经登录了！");
+            return "redirect:/main";
+        } else {
+            return "login";
+        }
     }
 
     @RequestMapping("/Login")

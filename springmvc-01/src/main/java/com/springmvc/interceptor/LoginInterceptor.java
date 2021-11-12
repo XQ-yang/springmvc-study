@@ -26,7 +26,8 @@ public class LoginInterceptor implements HandlerInterceptor {
 
         // 其他请求均转发到登录页，登录之后才能访问
         request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request,response); //请求转发，路径不变
-        //response.sendRedirect(request.getContextPath()+"/toLogin"); //重定向， 路径变为**/toLogin
+        // request.getRequestDispatcher("/toLogin").forward(request,response); //请求转发，路径不变
+        // response.sendRedirect(request.getContextPath()+"/toLogin"); //重定向， 路径变为**/toLogin
         return false;
     }
 }
